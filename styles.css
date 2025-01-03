@@ -1,26 +1,46 @@
+* {
+  margin: 0;
+}
+
 body {
+  font-family: DejaVu Sans Mono, monospace;
   background-color: darkslateblue;
 }
 
+.progress-container {
+  display: inline-block;
+  padding: 10px;
+}
+
 .nav {
-  font-family: sans-serif;
+  margin: 10px;
   text-align: center;
   color: azure;
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 40px;
 }
 .activity-feed {
   text-align: center;
-  font-family: sans-serif;
 }
-.container {
+.div-activity {
+  display: grid;
   background-color: azure;
   margin: 20px;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
+.div-progress {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: azure;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
 .box {
-  font-family: sans-serif;
   padding: 10px;
   border: 2px solid black;
   margin: 10px;
@@ -31,6 +51,10 @@ body {
   position: relative;
   display: flex;
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 10px;
   background: radial-gradient(circle, var(--primary-400) 55%, transparent 56%),
     conic-gradient(
       var(--blue-accent-500) calc(var(--progress-angle) * 1deg),
@@ -39,6 +63,9 @@ body {
     var(--green-accent-500);
   width: var(--circle-size);
   height: var(--circle-size);
+  font-size: 1.5rem;
+  color: #765e88;
+  text-align: center;
 }
 
 :root {
@@ -46,5 +73,75 @@ body {
   --blue-accent-500: #509cf2;
   --green-accent-500: #9976b3;
   --progress-angle: 270;
-  --circle-size: 40px;
+  --circle-size: 100px;
+}
+.calendar-container {
+  margin: 10px;
+}
+.workout-calendar {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of weeks */
+  gap: 10px; /* Space between weeks (columns) */
+  padding: 10px;
+  max-width: 100%; /* Limit the width to fit the screen */
+  max-height: 80vh; /* Limit the height to 80% of the viewport height */
+
+  box-sizing: border-box;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 5px;
+}
+
+.day {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+  background-color: #ebedf0;
+  transition: background-color 0.3s;
+}
+
+.day.logged {
+  background-color: #40c463; /* Green for logged workouts */
+}
+
+.day:hover {
+  background-color: #9be9a8;
+  cursor: pointer;
+}
+
+.month-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.month-labels div {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+.day-labels {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* .day-labels div {
+  text-align: center;
+  width: 40px;
+} */
+
+.day-labels div:nth-child(0),
+.day-labels div:nth-child(1),
+.day-labels div:nth-child(2) {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 20px;
 }

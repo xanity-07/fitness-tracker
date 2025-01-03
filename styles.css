@@ -1,9 +1,9 @@
 * {
   margin: 0;
+  font-family: Andale Mono, monospace;
 }
 
 body {
-  font-family: DejaVu Sans Mono, monospace;
   background-color: darkslateblue;
 }
 

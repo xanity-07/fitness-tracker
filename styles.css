@@ -1,0 +1,50 @@
+body {
+  background-color: darkslateblue;
+}
+
+.nav {
+  font-family: sans-serif;
+  text-align: center;
+  color: azure;
+  font-weight: bold;
+  font-size: 20px;
+}
+.activity-feed {
+  text-align: center;
+  font-family: sans-serif;
+}
+.container {
+  background-color: azure;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.box {
+  font-family: sans-serif;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 10px;
+  display: flex;
+}
+
+.progress-circle {
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-400) 55%, transparent 56%),
+    conic-gradient(
+      var(--blue-accent-500) calc(var(--progress-angle) * 1deg),
+      transparent calc(var(--progress-angle) * 1deg)
+    ),
+    var(--green-accent-500);
+  width: var(--circle-size);
+  height: var(--circle-size);
+}
+
+:root {
+  --primary-400: rgb(234, 246, 246);
+  --blue-accent-500: #509cf2;
+  --green-accent-500: #9976b3;
+  --progress-angle: 270;
+  --circle-size: 40px;
+}
